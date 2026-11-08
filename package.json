@@ -1,0 +1,19 @@
+{
+  "name": "memory-lane-prototype",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/app.test.cjs tests/generation.test.cjs",
+    "preview": "node --env-file-if-exists=.env server/server.cjs",
+    "build:preview": "python3 scripts/build-preview.py",
+    "test:browser": "npm run build:preview && playwright test",
+    "test:all": "npm test && npm run test:browser"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.65.0"
+  },
+  "dependencies": {
+    "ws": "^8.22.2"
+  }
+}

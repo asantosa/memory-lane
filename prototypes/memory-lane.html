@@ -1,0 +1,80 @@
+<div id="memory-preview" class="viz-carousel viz-dotted-background" aria-label="Memory Lane personality designs">
+  <section data-variant="The Storykeeper" aria-label="Warm scrapbook personality"></section>
+  <section data-variant="The Quiet Mind" aria-label="Calm focused personality" hidden></section>
+  <section data-variant="The Explorer" aria-label="Playful discovery personality" hidden></section>
+</div>
+<style>
+#memory-preview .stage{min-height:850px;display:flex;justify-content:center;padding:24px 10px 28px;box-sizing:border-box}
+#memory-preview .phone{--paper:light-dark(#f7f1e7,#25241f);--ink:light-dark(#323c32,#eee9dc);--soft:light-dark(#626958,#b8beaa);--tile:light-dark(#fffaf2,#34352d);--brand:light-dark(#455c44,#c2d2ae);--onbrand:light-dark(#fffaf2,#243221);--line:light-dark(#dfdfcf,#4b4e40);width:380px;max-width:100%;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:38px;padding:21px 22px 12px;box-sizing:border-box;font:15px/1.5 system-ui,sans-serif;box-shadow:0 18px 45px #00000016;align-self:start;overflow:hidden}
+#memory-preview .quiet{--paper:light-dark(#f2f5f4,#1e2828);--ink:light-dark(#254542,#e2edeb);--soft:light-dark(#536e6a,#b0c5c0);--tile:light-dark(#e5eeeb,#2d3e3a);--brand:light-dark(#32645e,#b3d5cd);--onbrand:light-dark(#fff,#183b34);--line:light-dark(#cfdfd9,#425a54)}
+#memory-preview .explorer{--paper:light-dark(#f5efff,#242033);--ink:light-dark(#392a63,#eee6ff);--soft:light-dark(#6e5b89,#c6b6e2);--tile:light-dark(#eae1fb,#39304e);--brand:light-dark(#6546a1,#d7c0ff);--onbrand:light-dark(#fff,#33214e);--line:light-dark(#dbceef,#54456a)}
+#memory-preview .status{display:flex;justify-content:space-between;font-size:12px;font-weight:600;margin:0 6px 25px}
+#memory-preview .brand{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px;letter-spacing:2px;font-size:11px;text-transform:uppercase}
+#memory-preview .avatar{letter-spacing:0;background:var(--tile);border:1px solid var(--line);border-radius:50%;height:34px;width:34px;display:grid;place-items:center;font:italic 17px Georgia,serif}
+#memory-preview h1{font:400 37px/1.12 Georgia,serif;letter-spacing:-1.4px;margin:0 0 12px}
+#memory-preview .quiet h1{font:400 34px/1.2 system-ui,sans-serif;letter-spacing:-1.3px}
+#memory-preview .explorer h1{font:500 35px/1.13 system-ui,sans-serif;letter-spacing:-1.5px}
+#memory-preview p{margin:0 0 20px;color:var(--soft)}
+#memory-preview .eyebrow{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--soft);margin-bottom:9px}
+#memory-preview button{font:inherit;color:inherit;cursor:inherit}
+#memory-preview .photo{display:block;width:100%;height:232px;object-fit:cover;object-position:center 35%;border-radius:4px;background:var(--tile)}
+#memory-preview .polaroid{background:var(--tile);padding:11px 11px 14px;box-shadow:0 4px 16px #00000012;transform:rotate(-2deg);margin:25px 3px 23px;position:relative}
+#memory-preview .polaroid:before{content:'';position:absolute;width:80px;height:23px;top:-10px;left:37%;background:light-dark(#d7c6a5aa,#a89973aa);transform:rotate(4deg)}
+#memory-preview .caption{display:flex;justify-content:space-between;align-items:center;padding:12px 2px 0;font:italic 18px Georgia,serif}
+#memory-preview .caption small{font:11px system-ui,sans-serif;color:var(--soft)}
+#memory-preview .quiet .polaroid{transform:none;padding:0;background:none;box-shadow:none;margin-top:22px}
+#memory-preview .quiet .polaroid:before,#memory-preview .explorer .polaroid:before{display:none}
+#memory-preview .quiet .photo{border-radius:100px 100px 14px 14px;height:244px}
+#memory-preview .quiet .caption{font:400 16px system-ui,sans-serif;padding-top:15px}
+#memory-preview .explorer .polaroid{transform:none;border-radius:24px;padding:9px;margin-top:18px}
+#memory-preview .explorer .photo{border-radius:18px;height:214px}
+#memory-preview .explorer .caption{padding:12px 8px 7px;font:500 17px system-ui,sans-serif}
+#memory-preview .primary{border:0;background:var(--brand);color:var(--onbrand);border-radius:17px;min-height:50px;width:100%;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;font-weight:500}
+#memory-preview .secondary{background:var(--tile);border:1px solid var(--line);border-radius:15px;min-height:46px;padding:10px 15px;text-align:left}
+#memory-preview .prompt{margin:20px 0;padding:17px 18px;border:1px solid var(--line);border-radius:18px}
+#memory-preview .prompt p{font:400 21px/1.35 Georgia,serif;color:var(--ink);margin:0 0 13px}
+#memory-preview .textbutton{border:0;padding:0;background:none;font-size:13px;color:var(--brand);min-height:30px}
+#memory-preview .navigation{display:flex;justify-content:space-around;border-top:1px solid var(--line);margin-top:22px;padding:14px 0 6px;gap:5px}
+#memory-preview .navigation button{background:none;border:0;display:grid;gap:5px;justify-items:center;font-size:10px;color:var(--soft);min-width:55px;min-height:45px;padding:3px}
+#memory-preview .navigation button[aria-current="page"]{color:var(--brand)}
+#memory-preview .navigation svg{width:21px;height:21px}
+#memory-preview .homebar{width:100px;height:4px;border-radius:3px;background:var(--ink);opacity:.7;margin:10px auto 0}
+#memory-preview .back{background:none;border:0;padding:0 0 18px;font-size:13px;min-height:44px}
+#memory-preview label{display:block;font-size:12px;margin:15px 0 7px;color:var(--soft)}
+#memory-preview input,#memory-preview textarea{box-sizing:border-box;width:100%;font:16px/1.5 system-ui,sans-serif;padding:12px;border:1px solid var(--line);background:var(--tile);color:var(--ink);border-radius:12px;resize:vertical}
+#memory-preview .row{display:flex;gap:9px;margin:12px 0;flex-wrap:wrap}
+#memory-preview .row button{flex:1}
+#memory-preview .hint{padding:13px 0;color:var(--soft);font-size:14px}
+#memory-preview .libraryitem{display:flex;align-items:center;gap:15px;background:var(--tile);padding:12px;border-radius:16px;margin:14px 0;width:100%;border:0;text-align:left}
+#memory-preview .libraryitem img{width:70px;height:80px;object-fit:cover;border-radius:9px}
+#memory-preview .libraryitem small{display:block;color:var(--soft);margin-top:6px}
+#memory-preview .success{padding:14px;background:var(--tile);border-radius:14px;margin:15px 0;color:var(--ink)}
+#memory-preview .body{min-height:649px}
+@media(max-width:400px){#memory-preview .stage{padding:12px 0;min-height:860px}#memory-preview .phone{padding:20px 18px 12px;border-radius:28px}#memory-preview h1{font-size:33px}}
+@media(prefers-reduced-motion:no-preference){#memory-preview .primary:active{transform:scale(.98)}}
+</style>
+<script>
+(()=>{
+const root=document.getElementById('memory-preview');
+const photo='https://cdn.jsdelivr.net/gh/mdn/learning-area@main/html/multimedia-and-embedding/responsive-images/elva-fairy-800w.jpg';
+const personalities=[{name:'Storykeeper',css:'scrapbook',title:'Little moments.<br>A whole life.',sub:'A place for the stories only you can tell.',cta:'Step back into this day',prompt:'What made childhood feel like magic?'},{name:'Quiet Mind',css:'quiet',title:'A moment<br>to remember.',sub:'One photo. One story. At your own pace.',cta:'Spend a moment here',prompt:'What comes to mind when you see this?'},{name:'Explorer',css:'explorer',title:'Your life is full<br>of hidden gems.',sub:'Follow a little curiosity. Find a familiar feeling.',cta:'Open a memory capsule',prompt:'What tiny detail brings this day back?'}];
+const saved=window.openai?.widgetState?.privateContent || {};
+const states=personalities.map(()=>({screen:'home',hint:false,reveal:false,title:'The garden was our kingdom',story:'We spent the whole afternoon searching for fairies. Every flower was a hiding place, and going home was the last thing on our minds.',saved:false,...saved}));
+function persist(i){window.openai?.setWidgetState({modelContent:{personality:personalities[i].name,screen:states[i].screen},privateContent:{screen:states[i].screen}})?.catch(()=>{});}
+const icon=n=>`<i data-lucide="${n}" aria-hidden="true"></i>`;
+root.querySelectorAll('[data-variant]').forEach((section,i)=>{
+ section.innerHTML=`<div class="stage"><div class="phone ${personalities[i].css}" aria-label="${personalities[i].name} app preview"><div class="status"><span>9:41</span><span aria-label="Full signal and battery">••• ▰</span></div><div class="brand"><span>Memory Lane</span><span class="avatar">J</span></div><div class="body"></div><nav class="navigation" aria-label="Main navigation"><button data-screen="home">${icon('house')}Today</button><button data-screen="library">${icon('images')}My stories</button><button data-screen="add">${icon('plus')}Add a moment</button></nav><div class="homebar"></div></div></div>`;
+ section.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const s=states[i];if(b.dataset.screen){s.screen=b.dataset.screen;s.hint=false;s.reveal=false;render(i);persist(i);}if(b.dataset.action==='hint'){s.hint=true;render(i);}if(b.dataset.action==='reveal'){s.reveal=true;render(i);}if(b.dataset.action==='save'){const title=section.querySelector('input').value.trim();const story=section.querySelector('textarea').value.trim();if(!title){section.querySelector('input').reportValidity();return;}s.title=title;s.story=story;s.saved=true;s.screen='library';render(i);}if(b.dataset.action==='later'){s.screen='home';s.savedNotice='We’ll leave this memory here for whenever you’re ready.';render(i);}});
+});
+function render(i){const section=root.children[i],p=personalities[i],s=states[i],body=section.querySelector('.body');const picture=`<img class="photo" src="${photo}" alt="An illustrative childhood photograph of a girl in a sunlit garden">`;const back='<button class="back" data-screen="home">← Back to today</button>';let html='';
+if(s.screen==='home')html=`<div class="eyebrow">Your daily pause · ${p.name}</div><h1>${p.title}</h1><p>${p.sub}</p><div class="polaroid">${picture}<div class="caption"><span>A little garden magic</span><small>Summer, circa 1998</small></div></div><button class="primary" data-screen="revisit">${p.cta}<span>↗</span></button>${s.savedNotice?`<div class="success" role="status">${s.savedNotice}</div>`:''}<div class="prompt"><div class="eyebrow">A story waiting to be told</div><p>${p.prompt}</p><button class="textbutton" data-screen="add">Keep this little story →</button></div>`;
+if(s.screen==='revisit')html=`${back}<div class="eyebrow">A gentle return</div><h1>What comes<br>back to you?</h1><p>There’s no right answer. Just notice what you feel.</p><div class="polaroid">${picture}</div>${s.hint?'<div class="hint" role="status">A little nudge: the garden, a summer afternoon, and someone looking for fairies.</div>':''}${s.reveal?`<div class="prompt" aria-live="polite"><div class="eyebrow">The saved story · sample memory</div><p>${escape(s.title)}</p><span>${escape(s.story)}</span></div><button class="primary" data-action="later">That was lovely <span>♡</span></button>`:`<div class="row"><button class="secondary" data-action="hint">A little hint</button><button class="secondary" data-action="reveal">Read the story</button></div><button class="textbutton" data-action="later">Maybe another time</button>`}`;
+if(s.screen==='add')html=`${back}<div class="eyebrow">Gather a moment</div><h1>Every photo has<br>a little more to say.</h1><p>Start with a feeling, a name, or one small detail.</p><div class="polaroid">${picture}<div class="caption"><span>Our sample photo</span><small>Design preview</small></div></div><label for="title-${i}">Give this moment a name</label><input id="title-${i}" required maxlength="90" value="${escape(s.title)}"><label for="story-${i}">What would you like to remember?</label><textarea id="story-${i}" rows="3" placeholder="I remember…">${escape(s.story)}</textarea><div class="hint">“Around 1998” and “I’m not sure” are welcome here.</div><button class="primary" data-action="save">Keep this story <span>♡</span></button>`;
+if(s.screen==='library')html=`<div class="eyebrow">Your living album</div><h1>Life, in<br>little chapters.</h1><p>Familiar faces. Small adventures. Your words.</p>${s.saved?'<div class="success" role="status">Your story is saved in this preview.</div>':''}<button class="libraryitem" data-screen="revisit"><img src="${photo}" alt="Childhood garden memory"><span>${escape(s.title)}<small>Childhood · Around 1998</small><small>Open story →</small></span></button><div class="prompt"><div class="eyebrow">The next chapter</div><p>Some stories haven’t found their words yet.</p><button class="textbutton" data-screen="add">Add a little moment →</button></div>`;
+body.innerHTML=html;section.querySelectorAll('.navigation button').forEach(b=>{if(b.dataset.screen===s.screen)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');});globalThis.lucide?.createIcons();}
+function escape(v){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+states.forEach((_,i)=>render(i));
+window.addEventListener('openai:set_globals',e=>{const next=e.detail?.globals?.widgetState?.privateContent;if(next?.screen && ['home','add','library','revisit'].includes(next.screen)){states.forEach((s,i)=>{s.screen=next.screen;render(i);});}});
+if(globalThis.Tweak){root.querySelectorAll('.phone').forEach(phone=>{const options={softCorners:true};const tweak=new Tweak({container:phone,onChange:()=>{phone.style.borderRadius=options.softCorners?'38px':'14px';}});tweak.addToggle(options,'softCorners',{label:'Soft corners'});});}
+})();
+</script>

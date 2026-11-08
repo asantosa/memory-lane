@@ -1,0 +1,10 @@
+.env
+.env.*
+!.env.example
+node_modules/
+test-results/
+playwright-report/
+artifacts/
+prototypes/memory-lane-preview.html
+.DS_Store
+*.log
