@@ -1,0 +1,16 @@
+{
+  "id": "./",
+  "name": "Memory Lane",
+  "short_name": "Memory Lane",
+  "description": "Gather your photos, keep their stories, and revisit your memories.",
+  "lang": "en",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#faf9f6",
+  "theme_color": "#faf9f6",
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
